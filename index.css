@@ -1,0 +1,86 @@
+
+
+
+/* Mixin's */  
+@mixin transition {
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+}
+@mixin corners ($radius) {
+-moz-border-radius: $radius;
+-webkit-border-radius: $radius;
+border-radius: $radius; 
+-khtml-border-radius: $radius; 
+}
+
+body {
+background-image: url('DIO1.jpg');
+background-size: cover;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+height:100%;
+}
+
+.wrapper {
+width: 800px;
+margin: 30px auto;
+color:$white;
+text-align:center;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 2.6em;
+  color:#000000;
+  text-transform: uppercase;
+}
+
+h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 2.6em;
+  color:#fe9923;
+  text-transform: uppercase;
+  
+}
+
+#seconds, #tens{
+  font-size:4em;
+  text-shadow: 20px 20px 8px black;
+  color: #FFFFFF
+  
+}
+
+button{
+@include corners (5px);
+background:$base-color;
+text-shadow:white;
+color: #000000;
+border: solid 1px $white;
+text-decoration:none;
+cursor:pointer;
+font-size:1.2em;
+padding:18px 10px;
+width:180px;
+margin: 10px;
+ outline: none;
+  &:hover{
+	@include transition;
+	background:$white;
+	border: solid 1px $white;
+	color:$base-color;
+	}
+}
+/* Colors for each button First white green, Shiny Green , and Green*/
+#button-start{
+	background: radial-gradient(#7cf87c, #59CA4E, #008000);
+}
+/* Colors for each button second white red, Shiny red , and red*/
+#button-stop{
+	background: radial-gradient(#f87c7c,#ED3C3F, #ff0000);
+}
+/* Colors for each button second white blue, Shiny blue , and blue*/
+#button-reset{
+	background: radial-gradient(#7c7cf8,#527DF3, #0000FF);
+}
